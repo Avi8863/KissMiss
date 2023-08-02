@@ -1,28 +1,29 @@
 {
   "project_info": {
     "project_number": "376576300942",
+    "firebase_url": "https://strangers-9bb11-default-rtdb.firebaseio.com",
     "project_id": "strangers-9bb11",
     "storage_bucket": "strangers-9bb11.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:376576300942:android:66bb9fe039360cae1836df",
+        "mobilesdk_app_id": "1:376576300942:android:1beff31aa3764dba1836df",
         "android_client_info": {
-          "package_name": "com.appsians.strangers"
+          "package_name": "com.kissmiss.videocalling"
         }
       },
       "oauth_client": [
         {
-          "client_id": "376576300942-2uvp9n9hshovocli9acgas6g09nhkfbd.apps.googleusercontent.com",
+          "client_id": "376576300942-dl5dfg45qhdl020fvt21kkuaqp8nk8nc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.appsians.strangers",
+            "package_name": "com.kissmiss.videocalling",
             "certificate_hash": "3974f82595f03691de77f47e0b52271e02eb1ec2"
           }
         },
         {
-          "client_id": "376576300942-cc5pjao3brhg77n3ds7rqlukcpflphpk.apps.googleusercontent.com",
+          "client_id": "376576300942-khemine58llftgjfcggicns3fu43md86.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

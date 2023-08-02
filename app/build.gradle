@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.appsians.strangers"
+        applicationId "com.kissmiss.videocalling"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
@@ -19,11 +19,21 @@ android {
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        release {
+            storeFile file('kissmiss.jks')
+            storePassword 'kissmiss'
+            keyAlias 'kissmiss'
+            keyPassword 'kissmiss'
+        }
+    }
 
     buildTypes {
         release {
+            debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
