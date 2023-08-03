@@ -20,7 +20,8 @@
         <activity android:name=".activities.CallActivity" />
         <activity android:name=".activities.ConnectingActivity"></activity>
         <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.WelcomeActivity">
+        <activity android:name=".activities.WelcomeActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

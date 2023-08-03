@@ -3,7 +3,7 @@ plugins {
 }
 apply plugin: 'com.google.gms.google-services'
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
     buildFeatures{
@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId "com.kissmiss.videocalling"
         minSdkVersion 19
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -21,7 +21,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file('kissmiss.jks')
+            storeFile file('C:\\Users\\avina\\Downloads\\kissmiss.jks')
             storePassword 'kissmiss'
             keyAlias 'kissmiss'
             keyPassword 'kissmiss'
@@ -33,7 +33,13 @@ android {
             debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
+            //   signingConfig signingConfigs.debug
+           // buildConfigFields("String","MY_BUILD_TYPE","\"THIS IS RELEASE\"")
+        }
+        debug{
+            debuggable true
+          //  buildConfigFields("String","MY_BUILD_TYPE","\"THIS IS DEBUG\"")
         }
     }
     compileOptions {
@@ -62,6 +68,8 @@ dependencies {
     implementation 'com.mikhaellopez:circularimageview:4.3.0'
     implementation 'com.kaopiz:kprogresshud:1.2.0'
     implementation 'com.google.android.gms:play-services-ads:20.4.0'
+
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
 
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'

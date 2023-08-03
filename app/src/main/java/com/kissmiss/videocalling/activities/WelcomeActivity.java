@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
+import com.kissmiss.videocalling.BuildConfig;
 import com.kissmiss.videocalling.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class WelcomeActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
+    TextView textView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 goToNextActivity();
             }
         });
+
     }
 
     void goToNextActivity() {
