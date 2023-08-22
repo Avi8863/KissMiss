@@ -1,4 +1,4 @@
-package com.kissmiss.videocalling.activities;
+package com.kissmiss.videocallingapp.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +13,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.kissmiss.videocalling.databinding.ActivityConnectingBinding;
+import com.kissmiss.videocallingapp.databinding.ActivityConnectingBinding;
 
 import org.jetbrains.annotations.NotNull;
 

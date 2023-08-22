@@ -1,4 +1,4 @@
-package com.kissmiss.videocalling;
+package com.kissmiss.videocallingapp;
 
 import org.junit.Test;
 

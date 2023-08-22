@@ -1,4 +1,4 @@
-package com.kissmiss.videocalling.activities;
+package com.kissmiss.videocallingapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.kissmiss.videocalling.BuildConfig;
-import com.kissmiss.videocalling.R;
+import com.kissmiss.videocallingapp.BuildConfig;
+import com.kissmiss.videocallingapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class WelcomeActivity extends AppCompatActivity {

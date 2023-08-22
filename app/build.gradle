@@ -4,7 +4,7 @@ plugins {
 }
 apply plugin: 'com.google.gms.google-services'
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
     buildToolsVersion "30.0.3"
 
     buildFeatures{
@@ -12,11 +12,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.kissmiss.videocalling"
+        applicationId "com.kissmiss.videocallingapp"
         minSdkVersion 19
-        targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 33
+        versionCode 2
+        versionName "1.1"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

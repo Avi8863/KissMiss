@@ -23,6 +23,59 @@
           }
         },
         {
+          "client_id": "376576300942-ldlqhgh059lvdi6r5dusjk6a3jna51gs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kissmiss.videocalling",
+            "certificate_hash": "ece7d4db073545955fb79501182923eb20418df6"
+          }
+        },
+        {
+          "client_id": "376576300942-sm7cov6bt4ahli8mi6af32bdht78f5ql.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kissmiss.videocalling",
+            "certificate_hash": "daf14836e889a512d406c06f20b14527885de88d"
+          }
+        },
+        {
+          "client_id": "376576300942-khemine58llftgjfcggicns3fu43md86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNTO6hzIMesOwUbI6lwn-DEAGrkJEQ9rs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376576300942-cc5pjao3brhg77n3ds7rqlukcpflphpk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376576300942:android:c54a1f906228951e1836df",
+        "android_client_info": {
+          "package_name": "com.kissmiss.videocallingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376576300942-ag9d4tlb1f638s4jsui14ge0627e59r8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kissmiss.videocallingapp",
+            "certificate_hash": "daf14836e889a512d406c06f20b14527885de88d"
+          }
+        },
+        {
           "client_id": "376576300942-khemine58llftgjfcggicns3fu43md86.apps.googleusercontent.com",
           "client_type": 3
         }

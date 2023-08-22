@@ -1,4 +1,4 @@
-package com.kissmiss.videocalling.activities;
+package com.kissmiss.videocallingapp.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,10 +15,10 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
-import com.kissmiss.videocalling.databinding.ActivityCallBinding;
-import com.kissmiss.videocalling.R;
-import com.kissmiss.videocalling.models.InterfaceJava;
-import com.kissmiss.videocalling.models.User;
+import com.kissmiss.videocallingapp.databinding.ActivityCallBinding;
+import com.kissmiss.videocallingapp.R;
+import com.kissmiss.videocallingapp.models.InterfaceJava;
+import com.kissmiss.videocallingapp.models.User;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

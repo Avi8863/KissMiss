@@ -1,4 +1,4 @@
-package com.kissmiss.videocalling;
+package com.kissmiss.videocallingapp;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.kissmiss.videocalling", appContext.getPackageName());
+        assertEquals("com.kissmiss.videocallingapp", appContext.getPackageName());
     }
 }

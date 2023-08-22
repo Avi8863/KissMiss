@@ -1,4 +1,4 @@
-package com.kissmiss.videocalling.activities;
+package com.kissmiss.videocallingapp.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,7 +7,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.kissmiss.videocalling.R;
+import com.kissmiss.videocallingapp.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.OnUserEarnedRewardListener;
@@ -19,7 +19,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.kissmiss.videocalling.databinding.ActivityRewardBinding;
+import com.kissmiss.videocallingapp.databinding.ActivityRewardBinding;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -1,4 +1,4 @@
-package com.kissmiss.videocalling.activities;
+package com.kissmiss.videocallingapp.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,8 +11,8 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 
-import com.kissmiss.videocalling.databinding.ActivityMainBinding;
-import com.kissmiss.videocalling.models.User;
+import com.kissmiss.videocallingapp.databinding.ActivityMainBinding;
+import com.kissmiss.videocallingapp.models.User;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;

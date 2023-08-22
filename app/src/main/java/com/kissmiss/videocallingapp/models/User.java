@@ -1,4 +1,4 @@
-package com.kissmiss.videocalling.models;
+package com.kissmiss.videocallingapp.models;
 
 public class User {
     private String uId, name, profile, city;

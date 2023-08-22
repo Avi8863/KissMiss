@@ -1,8 +1,8 @@
-package com.kissmiss.videocalling.models;
+package com.kissmiss.videocallingapp.models;
 
 import android.webkit.JavascriptInterface;
 
-import com.kissmiss.videocalling.activities.CallActivity;
+import com.kissmiss.videocallingapp.activities.CallActivity;
 
 public class InterfaceJava {
 
