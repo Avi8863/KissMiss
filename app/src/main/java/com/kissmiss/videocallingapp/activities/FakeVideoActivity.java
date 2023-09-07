@@ -115,11 +115,22 @@ public class FakeVideoActivity extends AppCompatActivity {
 
 
     void playVideo() {
-        MediaController mediaController = new MediaController(this);
+        String[] videoFiles = {String.valueOf(R.raw.video1), String.valueOf(R.raw.video2), String.valueOf(R.raw.video3), String.valueOf(R.raw.video4), String.valueOf(R.raw.video5)};
+        int randomIndex = (int) (Math.random() * videoFiles.length);
+        int videoResourceId = getResources().getIdentifier(videoFiles[randomIndex], "raw", getPackageName());
+        binding.videoPlayer.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + videoResourceId));
+        binding.videoPlayer.start();
+        binding.videoPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                binding.videoPlayer.start();
+            }
+        });
+
+     /*   MediaController mediaController = new MediaController(this);
         mediaController.setAnchorView(binding.videoPlayer);
         binding.videoPlayer.setMediaController(mediaController);
-        binding.videoPlayer.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" +
-                R.raw.video1));
+        binding.videoPlayer.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.video1));
         binding.videoPlayer.setMediaController(null);
         binding.videoPlayer.start();
         binding.videoPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -128,7 +139,7 @@ public class FakeVideoActivity extends AppCompatActivity {
 
             }
         });
-        /*else if (myRand.nextBoolean()) {
+        *//*else if (myRand.nextBoolean()) {
             binding.videoPlayer.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" +
                     R.raw.video2));
         } else if (myRand.nextBoolean()) {
@@ -140,8 +151,8 @@ public class FakeVideoActivity extends AppCompatActivity {
         } else if (myRand.nextBoolean()) {
             binding.videoPlayer.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" +
                     R.raw.video5));
-        }*/
-       /* Random myRand = new Random();
+        }*//*
+         *//* Random myRand = new Random();
         if (myRand.nextBoolean()) {
             binding.videoPlayer.setVideoPath("https://drive.google.com/file/d/1-CL0d9MQIdPbAUjEM_T93QbD0SXEe5s2/view?usp=drivesdk");
             binding.videoPlayer.start();
@@ -174,26 +185,45 @@ public class FakeVideoActivity extends AppCompatActivity {
         callJavaScriptFunction("javascript:init(\"" + uniqueId + "\")");
 
         if (createdBy.equalsIgnoreCase(username)) {
-            if (pageExit)
-                return;
+            if (pageExit) return;
             firebaseRef.child(username).child("connId").setValue(uniqueId);
             firebaseRef.child(username).child("isAvailable").setValue(true);
 
             binding.loadingGroup.setVisibility(View.GONE);
             binding.controls.setVisibility(View.VISIBLE);
 
-            FirebaseDatabase.getInstance().getReference()
-                    .child("profiles")
-                    .child(friendsUsername)
-                    .addListenerForSingleValueEvent(new ValueEventListener() {
+            FirebaseDatabase.getInstance().getReference().child("profiles").child(friendsUsername).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                    User user = snapshot.getValue(User.class);
+
+                    Glide.with(FakeVideoActivity.this).load(user.getProfile()).into(binding.profile);
+                    binding.name.setText(user.getName());
+                    binding.city.setText(user.getCity());
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+                }
+            });
+
+        } else {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    friendsUsername = createdBy;
+                    FirebaseDatabase.getInstance().getReference().child("profiles").child(friendsUsername).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                             User user = snapshot.getValue(User.class);
+                            if (user != null) {
 
-                            Glide.with(FakeVideoActivity.this).load(user.getProfile())
-                                    .into(binding.profile);
-                            binding.name.setText(user.getName());
-                            binding.city.setText(user.getCity());
+                                Glide.with(FakeVideoActivity.this).load(user.getProfile()).into(binding.profile);
+                                binding.name.setText(user.getName());
+                                binding.city.setText(user.getCity());
+                            }
 
                         }
 
@@ -202,51 +232,19 @@ public class FakeVideoActivity extends AppCompatActivity {
 
                         }
                     });
+                    FirebaseDatabase.getInstance().getReference().child("users").child(friendsUsername).child("connId").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                            if (snapshot.getValue() != null) {
+                                sendCallRequest();
+                            }
+                        }
 
-        } else {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    friendsUsername = createdBy;
-                    FirebaseDatabase.getInstance().getReference()
-                            .child("profiles")
-                            .child(friendsUsername)
-                            .addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                                    User user = snapshot.getValue(User.class);
-                                    if (user != null) {
+                        @Override
+                        public void onCancelled(@NonNull @NotNull DatabaseError error) {
 
-                                        Glide.with(FakeVideoActivity.this).load(user.getProfile())
-                                                .into(binding.profile);
-                                        binding.name.setText(user.getName());
-                                        binding.city.setText(user.getCity());
-                                    }
-
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
-                                }
-                            });
-                    FirebaseDatabase.getInstance().getReference()
-                            .child("users")
-                            .child(friendsUsername)
-                            .child("connId")
-                            .addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                                    if (snapshot.getValue() != null) {
-                                        sendCallRequest();
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
-                                }
-                            });
+                        }
+                    });
                 }
             }, 3000);
         }
@@ -270,8 +268,7 @@ public class FakeVideoActivity extends AppCompatActivity {
         firebaseRef.child(friendsUsername).child("connId").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                if (snapshot.getValue() == null)
-                    return;
+                if (snapshot.getValue() == null) return;
 
                 binding.loadingGroup.setVisibility(View.GONE);
                 binding.controls.setVisibility(View.VISIBLE);

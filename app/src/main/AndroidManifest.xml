@@ -41,7 +41,7 @@
             android:value="ca-app-pub-3940256099942544~3347511713" />
 
         <service
-            android:name=".models.PushNotificationService"
+            android:name=".classes.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action

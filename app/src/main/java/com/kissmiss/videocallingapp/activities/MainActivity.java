@@ -11,6 +11,8 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.kissmiss.videocallingapp.databinding.ActivityMainBinding;
 import com.kissmiss.videocallingapp.models.User;
 import com.bumptech.glide.Glide;
@@ -43,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        FirebaseMessaging.getInstance().subscribeToTopic("notificationavi");
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
