@@ -16,16 +16,26 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activities.ProfileZegoCloudActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ZegoCloudActivity"
+            android:exported="true" />
+        <activity
             android:name=".activities.FakeVideoActivity"
             android:exported="true" />
-        <activity android:name=".activities.RewardActivity"
-            android:exported="true"/>
-        <activity android:name=".activities.CallActivity"
-            android:exported="true"/>
-        <activity android:name=".activities.ConnectingActivity"
-            android:exported="true"/>
-        <activity android:name=".activities.LoginActivity"
-            android:exported="true"/>
+        <activity
+            android:name=".activities.RewardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.CallActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ConnectingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="true" />
         <activity
             android:name=".activities.WelcomeActivity"
             android:exported="true">
@@ -35,8 +45,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity"
-            android:exported="true"/>
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"
@@ -49,12 +60,9 @@
             android:name=".classes.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
-                <action
-                    android:name="com.google.firebase.MESSAGING_EVENT">
-                </action>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>
