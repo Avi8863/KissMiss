@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:background="@color/brown"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".agora.AgoraActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/local_video_view_container"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="6dp"
+            android:layout_alignEnd="@+id/remote_video_view_container"
+            android:layout_below="@+id/remote_video_view_container"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@android:color/darker_gray" />
+
+        <FrameLayout
+            android:id="@+id/remote_video_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:background="@android:color/darker_gray"
+            android:layout_centerHorizontal="true" />
+     <!--   <Button
+            android:id="@+id/JoinButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/local_video_view_container"
+            android:layout_alignStart="@id/local_video_view_container"
+            android:layout_marginTop="40dp"
+            android:visibility="gone"
+            android:onClick="joinChannel"
+            android:text="Join" />-->
+
+        <ImageView
+            android:id="@+id/LeaveButton"
+            android:layout_width="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/btn_endcall_normal"
+            android:layout_below="@+id/remote_video_view_container"
+            android:onClick="leaveChannel"
+            android:text="Leave" />
+    </RelativeLayout>
+</ScrollView>

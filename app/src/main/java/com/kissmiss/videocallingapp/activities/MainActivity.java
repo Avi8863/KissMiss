@@ -14,6 +14,7 @@ import android.view.View;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.kissmiss.videocallingapp.agora.AgoraActivity;
 import com.kissmiss.videocallingapp.databinding.ActivityMainBinding;
 import com.kissmiss.videocallingapp.models.User;
 import com.bumptech.glide.Glide;
@@ -32,6 +33,8 @@ import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationC
 import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationService;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -107,12 +110,30 @@ public class MainActivity extends AppCompatActivity {
                     else {
                         Toast.makeText(MainActivity.this, "Insufficient Coins", Toast.LENGTH_SHORT).show();
                     }*/
-                    database.getReference().child("profiles")
+                  /*  Random myRand = new Random();
+                    if (myRand.nextBoolean()) {
+                        database.getReference().child("profiles")
+                                .child(currentUser.getUid())
+                                .child("coins");
+                        Intent intent = new Intent(MainActivity.this, FakeVideoActivity.class);
+                        intent.putExtra("profile", user.getProfile());
+                        startActivity(intent);
+                    }
+                    else {
+                        database.getReference().child("profiles")
+                                .child(currentUser.getUid())
+                                .child("coins");
+                        Intent intent = new Intent(MainActivity.this, AgoraActivity.class);
+                        intent.putExtra("profile", user.getProfile());
+                        startActivity(intent);
+                    }*/
+
+                   database.getReference().child("profiles")
                             .child(currentUser.getUid())
                             .child("coins")
                             .setValue(coins);
                     startMyService(user.getuId());
-                    Intent intent = new Intent(MainActivity.this, ConnectingActivity.class);
+                    Intent intent = new Intent(MainActivity.this, AgoraActivity.class);
                     intent.putExtra("profile", user.getProfile());
                     startActivity(intent);
                    // startMyService(user.getuId());
