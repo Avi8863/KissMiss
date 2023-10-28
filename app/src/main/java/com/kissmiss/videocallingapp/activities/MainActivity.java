@@ -1,22 +1,13 @@
 package com.kissmiss.videocallingapp.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
-import android.app.Activity;
-import android.app.Application;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
-
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.messaging.FirebaseMessaging;
-import com.kissmiss.videocallingapp.agora.AgoraActivity;
-import com.kissmiss.videocallingapp.databinding.ActivityMainBinding;
-import com.kissmiss.videocallingapp.models.User;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
@@ -27,14 +18,12 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.kaopiz.kprogresshud.KProgressHUD;
-import com.zegocloud.uikit.prebuilt.call.config.ZegoNotificationConfig;
-import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationConfig;
-import com.zegocloud.uikit.prebuilt.call.invite.ZegoUIKitPrebuiltCallInvitationService;
-
+import com.kissmiss.videocallingapp.agora.AgoraActivity;
+import com.kissmiss.videocallingapp.databinding.ActivityMainBinding;
+import com.kissmiss.videocallingapp.models.User;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -132,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                             .child(currentUser.getUid())
                             .child("coins")
                             .setValue(coins);
-                    startMyService(user.getuId());
+                 //   startMyService(user.getuId());
                     Intent intent = new Intent(MainActivity.this, AgoraActivity.class);
                     intent.putExtra("profile", user.getProfile());
                     startActivity(intent);
@@ -165,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private void startMyService(String userId) {
+ /*   private void startMyService(String userId) {
         Application application = getApplication(); // Android's application context
         long appID = 199733061;   // yourAppID
         String appSign = "c370e295da50580bd1f80c2022edaa1e3b52122db253b2502774898872c70f11";  // yourAppSign
@@ -179,12 +168,12 @@ public class MainActivity extends AppCompatActivity {
         notificationConfig.channelID = "CallInvitation";
         notificationConfig.channelName = "CallInvitation";
         ZegoUIKitPrebuiltCallInvitationService.init(getApplication(), appID, appSign, userID, userName, callInvitationConfig);
-    }
+    }*/
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ZegoUIKitPrebuiltCallInvitationService.unInit();
+       // ZegoUIKitPrebuiltCallInvitationService.unInit();
     }
 
 }

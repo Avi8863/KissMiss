@@ -16,8 +16,8 @@ android {
         applicationId "com.kissmiss.videocallingapp"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 7
-        versionName "1.7"
+        versionCode 8
+        versionName "1.8"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -83,9 +83,4 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:23.2.1' // Use the latest version
     implementation 'io.agora.rtc:full-sdk:4.0.1'
     implementation("commons-codec:commons-codec:1.9")
-
-
-    implementation 'com.github.ZEGOCLOUD:zego_uikit_prebuilt_call_android:+'    // Add this line to your module-level build.gradle file's dependencies, usually named [app].
-    implementation 'com.github.ZEGOCLOUD:zego_uikit_signaling_plugin_android:+'
-
 }
